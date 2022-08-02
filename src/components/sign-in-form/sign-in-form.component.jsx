@@ -6,7 +6,7 @@ import { useState } from "react";
 import FormInput from "../form-input/form-input.component";
 import Button from "../button/button.component";
 
-import { createUserDocumentFromAuth, signInWighGooglePopup, signInAuthUserWithEmailAndPassword } from "../../utils/firebase/firebase.utils";
+import { signInWighGooglePopup } from "../../utils/firebase/firebase.utils";
 
 import './sign-in-form.styles.scss';
 
@@ -31,7 +31,6 @@ const SignInForm = () => {
     event.preventDefault();
     
     try {
-      const {user} = await signInAuthUserWithEmailAndPassword(email, password);
       resetFormFields();
     } catch(error) {
       switch(error.code) {
